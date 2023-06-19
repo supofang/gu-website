@@ -1,0 +1,547 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/*------------------------------------*\
+animate動畫
+\*------------------------------------*/
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+.animate-fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.animate-fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+html, body {
+  font-family: Arial, Helvetica, sans-serif, Microsoft JhengHei, 微軟正黑體; }
+
+body {
+  background: url(../images/bg.jpg) center top no-repeat;
+  background-size: cover;
+  padding-right: 0;
+  padding-left: 0; }
+
+#main {
+  position: relative; }
+
+/*header*/
+#header {
+  height: 50vh;
+  position: relative;
+  overflow: hidden; }
+  @media only screen and (min-width: 480px) {
+    #header {
+      height: 100vh;
+      max-height: 960px; } }
+
+.p {
+  position: absolute;
+  max-width: 1182px;
+  width: 130%;
+  height: 100%;
+  left: 50%;
+  right: 0;
+  -webkit-transform: translateX(-60%);
+          transform: translateX(-60%);
+  background: url(../images/p.png) center top no-repeat;
+  background-size: 90% auto; }
+  @media only screen and (min-width: 480px) {
+    .p {
+      background-position-y: center; } }
+  @media only screen and (min-width: 1024px) {
+    .p {
+      background-size: 100% auto; } }
+  @media screen and (max-height: 600px) {
+    .p {
+      background-position-y: top;
+      background-size: auto 100%;
+      -webkit-transform: translateX(-55%);
+              transform: translateX(-55%); } }
+
+.tit {
+  position: absolute;
+  background: url(../images/tit.png) center no-repeat;
+  background-size: 70% auto;
+  width: 70%;
+  max-width: 498px;
+  height: 20vh;
+  max-height: 346px;
+  margin-left: -35%;
+  left: 50%;
+  bottom: 0;
+  z-index: 10;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  text-transform: capitalize; }
+  @media only screen and (min-width: 768px) {
+    .tit {
+      width: 70%;
+      max-width: 498px;
+      background-size: 100% auto;
+      margin-left: -200px;
+      bottom: 5vh; } }
+  @media screen and (max-height: 375px) {
+    .tit {
+      background-size: auto 100%; } }
+
+.logo {
+  position: absolute;
+  background: url(../images/logo.png) center no-repeat;
+  background-size: auto 100%;
+  width: 300px;
+  height: 15vh;
+  max-height: 346px;
+  margin-left: -150px;
+  left: 50%;
+  bottom: 10vh;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  text-transform: capitalize;
+  -webkit-transition: all .3s;
+  transition: all .3s; }
+  .logo:hover {
+    background-image: url(../images/logo_hover.png); }
+  @media only screen and (min-width: 480px) {
+    .logo {
+      height: 30vh;
+      width: 600px;
+      margin-left: -300px; } }
+  @media only screen and (min-width: 768px) {
+    .logo {
+      height: 35vh;
+      margin-left: -400px;
+      bottom: 13vh; } }
+
+/*內容*/
+.container {
+  padding: 10px; }
+  .container img {
+    display: block;
+    margin: 0 auto; }
+
+/* download nav*/
+.newposttop {
+  padding: 0; }
+  .newposttop li {
+    margin-top: 1em;
+    position: relative; }
+    .newposttop li::before, .newposttop li::after {
+      content: "";
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      top: 0;
+      background-size: cover; }
+    .newposttop li::before {
+      left: 0;
+      background-image: url(../images/frame-left.png); }
+    .newposttop li::after {
+      right: 0;
+      background-image: url(../images/frame-right.png); }
+    .newposttop li a {
+      margin: 0 auto;
+      display: block;
+      background: rgba(255, 255, 255, 0.5) center no-repeat;
+      background-size: auto 50%;
+      border: 3px solid #5d54ae;
+      height: 90px;
+      -webkit-transition: all .5s;
+      transition: all .5s;
+      text-indent: -119988px;
+      overflow: hidden;
+      text-align: left;
+      text-transform: capitalize; }
+      .newposttop li a:hover {
+        background-color: white; }
+    .newposttop li:nth-child(1) a {
+      background-image: url(../images/appstore.png); }
+    .newposttop li:nth-child(2) a {
+      background-image: url(../images/googleplay.png); }
+    .newposttop li:nth-child(3) a {
+      background-image: url(../images/apk.png); }
+  @media only screen and (min-width: 480px) {
+    .newposttop li {
+      display: inline-block;
+      vertical-align: middle;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline;
+      width: 31.33%;
+      margin-left: -4px;
+      margin-right: 3%; }
+      .newposttop li::before, .newposttop li::after {
+        width: 30px;
+        height: 30px; }
+      .newposttop li:last-child {
+        margin-right: 0; }
+      .newposttop li a {
+        height: 60px;
+        background-size: auto 37%; } }
+  @media only screen and (min-width: 768px) {
+    .newposttop li::before, .newposttop li::after {
+      width: 45px;
+      height: 45px; }
+    .newposttop li a {
+      height: 90px;
+      background-size: auto 50%; } }
+
+/* news list*/
+.tab_container {
+  margin: 1em; }
+
+.index_news {
+  width: 100%;
+  height: auto;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3px solid #5d54ae; }
+
+/* --------- News Tag ---------*/
+.viewtitle {
+  font-size: 1em;
+  font-weight: bold; }
+  .viewtitle ul {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: relative; }
+    .viewtitle ul:after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzVkNTRhZSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzVkNTRhZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVkNTRhZSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+      background-size: 100%;
+      background-image: -webkit-gradient(linear, left top, right top, from(rgba(93, 84, 174, 0)), color-stop(50%, #5d54ae), to(rgba(93, 84, 174, 0)));
+      background-image: linear-gradient(to right, rgba(93, 84, 174, 0) 0%, #5d54ae 50%, rgba(93, 84, 174, 0) 100%); }
+    .viewtitle ul li {
+      border-right: 1px solid #5d54ae;
+      line-height: 1.8em;
+      margin-left: -4px;
+      width: 20%;
+      display: inline-block;
+      vertical-align: middle;
+      *vertical-align: auto;
+      *zoom: 1;
+      *display: inline; }
+      .viewtitle ul li:last-child {
+        border-right: none; }
+      .viewtitle ul li.active {
+        background-color: rgba(93, 84, 174, 0.5); }
+      .viewtitle ul li.active a {
+        color: #fff; }
+    .viewtitle ul a {
+      color: #5d54ae; }
+
+/* --------- News list ---------*/
+#news_all {
+  height: auto; }
+  #news_all:after, #news_all:before {
+    content: "";
+    display: table; }
+  #news_all:after {
+    clear: both;
+    *zoom: 1; }
+
+#news_all li {
+  padding: 8px 0px; }
+  #news_all li:after, #news_all li:before {
+    content: "";
+    display: table; }
+  #news_all li:after {
+    clear: both;
+    *zoom: 1; }
+
+.links {
+  color: #5d54ae; }
+
+.links:hover, .news_tips:hover, .news_tips_date:hover {
+  color: #2c2852; }
+
+.news_icon {
+  width: 35px;
+  float: left;
+  padding-right: 5px; }
+
+.news_tips {
+  font-size: 14px;
+  line-height: 16px;
+  float: left;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 16px; }
+
+.news_tips_date {
+  width: 80px;
+  font-size: 14px;
+  line-height: 16px;
+  float: left; }
+  @media only screen and (min-width: 480px) {
+    .news_tips_date {
+      float: right; } }
+
+/* --------- pages  ---------*/
+.pages {
+  height: 2em;
+  margin: 10px auto;
+  text-align: center; }
+
+.pages li {
+  margin: 0px 15px;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline; }
+
+.pages li a {
+  color: #5d54ae;
+  font-size: 15px;
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  line-height: 2em; }
+
+/* --------- fansnav ---------*/
+.fansnav {
+  margin-top: 2em; }
+  .fansnav li {
+    width: 100%;
+    background-size: auto 100%;
+    -webkit-transition: all, 0.4s;
+    transition: all, 0.4s;
+    margin-top: 1em; }
+  .fansnav a {
+    display: block;
+    background-size: auto 50%;
+    height: 80px;
+    margin: 1.5em 0; }
+  @media only screen and (min-width: 480px) {
+    .fansnav:after, .fansnav:before {
+      content: "";
+      display: table; }
+    .fansnav:after {
+      clear: both;
+      *zoom: 1; }
+    .fansnav li {
+      float: left;
+      width: 49%;
+      margin-right: 2%; }
+      .fansnav li:last-child {
+        margin-right: 0; }
+    .fansnav a {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em; } }
+  @media only screen and (min-width: 1024px) {
+    .fansnav a {
+      height: 90px;
+      margin-top: 1em;
+      margin-bottom: 3em; } }
+
+.btn_down {
+  background-color: rgba(136, 65, 224, 0.3);
+  border: 1px solid #5d54ae; }
+  .btn_down:hover {
+    background-color: rgba(136, 65, 224, 0.5); }
+  .btn_down a {
+    background: url(../images/fb-t.png) center center no-repeat; }
+  @media only screen and (min-width: 768px) {
+    .btn_down {
+      background: rgba(136, 65, 224, 0.3) url(../images/fb-p.png) left center no-repeat; }
+      .btn_down a {
+        background-position-x: 90%; } }
+
+.btn_downs {
+  background-color: rgba(4, 87, 200, 0.3);
+  border: 1px solid #336cc0; }
+  .btn_downs:hover {
+    background-color: rgba(4, 87, 200, 0.5); }
+  .btn_downs a {
+    background: url(../images/service-t.png) center center no-repeat; }
+  @media only screen and (min-width: 768px) {
+    .btn_downs {
+      background: rgba(4, 87, 200, 0.3) url(../images/service-p.png) right center no-repeat; }
+      .btn_downs a {
+        background-position-x: 10%; } }
+
+/* --------- gameguid ---------*/
+.guijpg {
+  max-width: 1136px;
+  border: 3px solid #5d54ae;
+  background-color: rgba(255, 255, 255, 0.75);
+  position: relative; }
+  .guijpg::before, .guijpg::after {
+    content: '';
+    background-image: url(../images/frame-left.png);
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 2px;
+    z-index: 100; }
+  .guijpg::before {
+    left: 2px; }
+  .guijpg::after {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    right: 2px; }
+
+.carousel {
+  margin-bottom: 0;
+  padding: 1em; }
+  .carousel::before, .carousel::after {
+    content: '';
+    background-image: url(../images/frame-left.png);
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    bottom: 2px;
+    z-index: 100;
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg); }
+  .carousel::before {
+    left: 2px; }
+  .carousel::after {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    right: 2px; }
+
+.carousel-indicators {
+  top: 25px;
+  right: 25px; }
+
+.carousel-control {
+  top: 50%; }
+
+.carousel-control.right {
+  right: 25px; }
+
+.carousel-control.left {
+  left: 25px; }
+
+/* --------- footer ---------*/
+.footer {
+  background: url(../images/bg-1.jpg) center no-repeat;
+  margin-top: 2em;
+  background-size: cover;
+  padding: .5em; }
+  @media only screen and (min-width: 480px) {
+    .footer {
+      padding-top: 1.5em;
+      padding-bottom: 1.5em; } }
+  @media only screen and (min-width: 1024px) {
+    .footer {
+      padding-top: 4em;
+      padding-bottom: 4em; } }
